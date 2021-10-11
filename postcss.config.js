@@ -1,4 +1,7 @@
 /* eslint-disable no-undef */
 module.exports = {
-  plugins: [require('autoprefixer')]
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {}
+  }
 }

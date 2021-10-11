@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Index from '/@/pages/Index.vue'
-import Hello from '/@/pages/Hello.vue'
+
+// Layout
+import Layout from '/@/components/layout/index.vue'
 
 export const routerHistory = createWebHistory()
 
@@ -9,13 +10,8 @@ export default createRouter({
   routes: [
     {
       path: '/',
-      name: 'index',
-      component: Index
-    },
-    {
-      path: '/hello',
-      name: 'hello',
-      component: Hello
+      name: 'home',
+      component: Layout
     }
   ]
 })
