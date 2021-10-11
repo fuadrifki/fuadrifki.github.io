@@ -1,7 +1,6 @@
 <template>
-  <div class="bg-blue-100 h-screen">
-    <!-- <Navbar /> -->
-    hahaha
+  <div class="flex flex-row items-center px-20 bg-gray-50">
+    <Navbar />
   </div>
 </template>
 
