@@ -1,17 +1,53 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 // Layout
-import Layout from '/@/components/layout/index.vue'
+const Layout = () => import('/@/components/layout/index.vue')
 
-export const routerHistory = createWebHistory()
+// pages
+const Home = () => import('/@/pages/home/index.vue')
+const MyShop = () => import('/@/pages/my-shop/index.vue')
 
-export default createRouter({
-  history: routerHistory,
-  routes: [
-    {
-      path: '/',
-      name: 'home',
-      component: Layout
-    }
-  ]
+const history = createWebHistory()
+
+const routes = [
+  {
+    path: '/',
+    name: 'Home',
+    component: Layout,
+    children: [
+      {
+        path: '',
+        name: 'Home',
+        component: Home
+      }
+    ]
+  },
+  {
+    path: '/my-shop',
+    name: 'My Shop',
+    component: Layout,
+    children: [
+      {
+        path: '',
+        name: 'My Shop',
+        component: MyShop
+      }
+    ]
+  }
+]
+
+const router = createRouter({
+  history,
+  routes
 })
+
+//reference : https://github.com/vuejs/vue-router/issues/914
+router.beforeEach(async (to: any, from: any, next: any) => {
+  document.title = 'FR'
+  if (to.name != null) {
+    document.title = 'FR - ' + to.name
+  }
+  next()
+})
+
+export default router

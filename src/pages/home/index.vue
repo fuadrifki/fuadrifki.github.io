@@ -1,9 +1,21 @@
 <template>
-  <div class="text-red-400">Ini Home Page</div>
+  <Introduction />
+  <CV />
+  <Project />
 </template>
 
 <script lang="ts">
-import { Vue } from 'vue-class-component'
+import { Options, Vue } from 'vue-class-component'
+import Introduction from './components/introduction.vue'
+import CV from './components/cv.vue'
+import Project from './components/project.vue'
 
+@Options({
+  components: {
+    Introduction,
+    CV,
+    Project
+  }
+})
 export default class Home extends Vue {}
 </script>

@@ -18,14 +18,22 @@ module.exports = {
 
       black: colors.black,
       white: colors.white,
-      gray: colors.coolGray,
+      gray: colors.gray,
+      'cool-gray': colors.coolGray,
+      'true-gray': colors.trueGray,
+      'warm-gray': colors.warmGray,
       red: colors.red,
       yellow: colors.amber,
       green: colors.emerald,
       blue: colors.blue,
       indigo: colors.indigo,
       purple: colors.violet,
-      pink: colors.pink
+      pink: colors.pink,
+      lime: colors.lime,
+      primary: {
+        100: '#016938',
+        200: '#95cf24'
+      }
     },
     spacing: {
       px: '1px',

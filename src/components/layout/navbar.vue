@@ -1,31 +1,50 @@
 <template>
-  <div class="w-full flex flex-row items-center justify-between my-4">
+  <div class="w-full flex flex-row items-center justify-end relative px-8">
+    <img
+      class="w-40 cursor-pointer absolute left-14 top-8"
+      src="/@/assets/images/logo.png"
+      @click="() => toMenu('/')"
+    />
     <div
       class="
-        bg-red-400
-        text-gray-100 text-2xl
-        rounded-full
-        items-center
-        p-4
-        cursor-pointer
+        flex flex-col
+        justify-between
+        space-y-4
+        pt-14
+        w-full
+        border-l-4 border-gray-700
       "
-      @click="() => toMenu('/')"
     >
-      FR
+      <div class="text-xl font-semibold text-transparent">test</div>
+      <hr class="border-b-4 border-t-0 border-gray-700" />
     </div>
-    <div class="flex flex-row items-center space-x-10">
-      <template v-for="menu in menus" :key="menu">
-        <div
-          :class="`
-        text-lg
-        font-semibold
-        text-gray-500
-        hover:text-red-600
-        ${isActive(menu.name) ? 'text-red-600' : 'cursor-pointer'}
+    <div
+      class="w-auto flex flex-row items-center pt-14 border-r-4 border-gray-700"
+    >
+      <template v-for="(menu, idx) in menus" :key="menu">
+        <div class="flex flex-col justify-between space-y-4">
+          <div
+            :class="`
+        text-xl
+        font-medium
+        whitespace-nowrap
+        px-6
+        ${idx === menus.length - 1 ? 'mr-16' : ''}
+        text-white
+        hover:text-primary-200
+        ${isActive(menu.name) ? 'text-primary-200' : 'cursor-pointer'}
         `"
-          @click="menu.action"
-        >
-          {{ menu.name }}
+            @click="menu.action"
+          >
+            {{ menu.name }}
+          </div>
+          <hr
+            :class="
+              isActive(menu.name)
+                ? 'border-b-4 border-t-0 border-primary-200'
+                : 'border-b-4 border-t-0 border-gray-700'
+            "
+          />
         </div>
       </template>
     </div>
@@ -38,12 +57,10 @@ import router from '/@/router'
 
 export default class Navbar extends Vue {
   isActive(menu: string) {
-    return this.$route.name === menu.toLowerCase()
+    return this.$route.name?.toLowerCase() === menu.toLowerCase()
   }
   toMenu(to: string) {
-    if (!this.isActive) {
-      router.push(to)
-    }
+    router.push(to)
   }
   get menus() {
     return [
@@ -52,8 +69,12 @@ export default class Navbar extends Vue {
         action: () => this.toMenu('/')
       },
       {
-        name: 'Shop',
-        action: () => alert('Shop to be development...')
+        name: 'Blog',
+        action: () => alert('Blog to be development...')
+      },
+      {
+        name: 'My Shop',
+        action: () => this.toMenu('/my-shop')
       },
       {
         name: 'About Me',
