@@ -1,23 +1,23 @@
 <template>
-  <div
-    class="
-      h-screen
-      grid grid-cols-2
-      px-20
-      space-x-4
-      bg-gradient-to-r
-      from-cool-gray-900
-      to-true-gray-900
-      text-white
-    "
-  >
-    <div class="flex flex-col space-y-4 text-left justify-center pl-64">
-      <div class="text-3xl">Hi, I'm</div>
-      <div class="text-5xl">Fuad Rifqi Zamzami</div>
+  <PageSections is-to-right>
+    <div
+      class="
+        w-full
+        lg:w-1/2
+        flex flex-col
+        space-y-4
+        text-left
+        justify-center
+        lg:pl-64
+        pt-16
+      "
+    >
+      <div class="text-20px lg:text-36px">Hi, I'm</div>
+      <div class="text-28px lg:text-48px font-semibold">Fuad Rifqi Zamzami</div>
       <hr class="border-primary-200" />
-      <div class="text-xl">Software Engineer</div>
+      <div class="text-16px lg:text-28px">Software Engineer</div>
     </div>
-    <div class="flex justify-center items-center">
+    <div class="w-full lg:w-1/2 flex justify-center items-center">
       <div
         class="
           rounded-full
@@ -28,16 +28,22 @@
         "
       >
         <img
-          class="w-64 rounded-full border-8 border-transparent"
+          class="w-44 lg:w-64 rounded-full border-8 border-transparent"
           src="/@/assets/images/me.jpeg"
         />
       </div>
     </div>
-  </div>
+  </PageSections>
 </template>
 
 <script lang="ts">
-import { Vue } from 'vue-class-component'
+import { Options, Vue } from 'vue-class-component'
+import PageSections from '/@/components/layout/page-sections.vue'
 
+@Options({
+  components: {
+    PageSections
+  }
+})
 export default class Introduction extends Vue {}
 </script>
