@@ -5,6 +5,8 @@ const Layout = () => import('/@/components/layout/index.vue')
 
 // pages
 const Home = () => import('/@/pages/home/index.vue')
+const Blog = () => import('/@/pages/blog/index.vue')
+const BlogDetail = () => import('/@/pages/blog/components/detail.vue')
 const MyShop = () => import('/@/pages/my-shop/index.vue')
 
 const history = createWebHistory()
@@ -22,6 +24,32 @@ const routes = [
       }
     ]
   },
+  // blog
+  {
+    path: '/blog',
+    name: 'Blog',
+    component: Layout,
+    children: [
+      {
+        path: '',
+        name: 'Blog',
+        component: Blog
+      }
+    ]
+  },
+  {
+    path: '/blog',
+    name: 'Blog Detail',
+    component: Layout,
+    children: [
+      {
+        path: ':id',
+        name: 'Blog Detail',
+        component: BlogDetail
+      }
+    ]
+  },
+  // my shop
   {
     path: '/my-shop',
     name: 'My Shop',

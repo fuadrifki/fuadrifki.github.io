@@ -1,14 +1,15 @@
 <template>
   <div
     :class="`
-      lg:h-screen
-      py-20
+      lg:${height}
+      ${spacing ? 'py-20' : ''}
       px-8 lg:px-20
       ${
         isToRight
-          ? 'flex-col space-y-20 bg-gradient-to-r'
+          ? `flex-col ${spacing ? 'space-y-20' : ''} bg-gradient-to-r`
           : 'flex-col-reverse bg-gradient-to-l'
-      } flex lg:flex-row
+      } 
+      flex lg:flex-row
       from-cool-gray-900
       to-true-gray-900
       text-white`"
@@ -25,6 +26,14 @@ import { Options, Vue } from 'vue-class-component'
     isToRight: {
       default: false,
       type: Boolean
+    },
+    spacing: {
+      default: true,
+      type: Boolean
+    },
+    height: {
+      default: 'h-screen',
+      type: String
     }
   }
 })

@@ -8,7 +8,9 @@ class MainAppStore extends VuexModule {
 
   @Mutation
   public setExpand() {
-    this.isExpand = !this.isExpand
+    if (!this.isLargeScreen) {
+      this.isExpand = !this.isExpand
+    }
   }
 }
 

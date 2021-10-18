@@ -54,12 +54,12 @@
         v-if="!isExpand"
         class="
           w-20
-          lg:w-40
+          lg:w-28
           cursor-pointer
           absolute
           justify-center
-          lg:left-14
-          top-8
+          lg:left-10
+          top-6
         "
         src="/@/assets/images/logo.png"
         @click="() => toMenu('/')"
@@ -70,15 +70,13 @@
           flex flex-col
           justify-between
           space-y-4
-          pt-14
+          pt-8
           w-full
           lg:border-l-4
           border-gray-700
         "
       >
-        <div class="text-16px lg:text-20px font-semibold text-transparent">
-          test
-        </div>
+        <div class="text-16px font-semibold text-transparent">test</div>
         <hr class="lg:border-b-4 border-t-0 border-gray-700" />
       </div>
       <div
@@ -87,7 +85,7 @@
           flex flex-col
           lg:flex-row
           items-center
-          lg:pt-14 lg:border-r-4
+          lg:pt-8 lg:border-r-4
           border-gray-700
           py-4
           lg:py-0
@@ -97,11 +95,11 @@
           <div class="flex flex-col justify-between space-y-4">
             <div
               :class="`
-                text-16px lg:text-20px
+                text-16px
                 font-medium
                 whitespace-nowrap
-                px-6
-                ${idx === menuList.length - 1 ? 'lg:mr-16' : ''}
+                px-4
+                ${idx === menuList.length - 1 ? 'lg:mr-10' : ''}
                 text-white
                 hover:text-primary-200
                 ${isActive(menu.name) ? 'text-primary-200' : 'cursor-pointer'}
@@ -132,7 +130,7 @@ import router from '/@/router'
 
 export default class Navbar extends Vue {
   isActive(menu: string) {
-    return this.$route.name?.toLowerCase() === menu.toLowerCase()
+    return this.$route.name?.toLowerCase().includes(menu.toLowerCase())
   }
   toMenu(to: string) {
     this.onExpand()
