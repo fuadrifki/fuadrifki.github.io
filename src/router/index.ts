@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 
 // Layout
 const Layout = () => import('/@/components/layout/index.vue')
@@ -8,8 +8,9 @@ const Home = () => import('/@/pages/home/index.vue')
 const Blog = () => import('/@/pages/blog/index.vue')
 const BlogDetail = () => import('/@/pages/blog/components/detail.vue')
 const MyShop = () => import('/@/pages/my-shop/index.vue')
+const NotFound = () => import('/@/pages/not-found/index.vue')
 
-const history = createWebHistory()
+const history = createWebHashHistory()
 
 const routes = [
   {
@@ -59,6 +60,19 @@ const routes = [
         path: '',
         name: 'My Shop',
         component: MyShop
+      }
+    ]
+  },
+  // not found
+  {
+    path: '/:pathMatch(.*)',
+    name: 'Not Found',
+    component: Layout,
+    children: [
+      {
+        path: '',
+        name: 'Not Found',
+        component: NotFound
       }
     ]
   }

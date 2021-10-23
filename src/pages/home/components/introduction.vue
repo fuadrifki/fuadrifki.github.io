@@ -8,12 +8,12 @@
         space-y-4
         text-left
         justify-center
-        lg:pl-64
+        lg:pl-40
         pt-16
       "
     >
       <div class="text-20px lg:text-36px">Hi, I'm</div>
-      <div class="text-28px lg:text-48px font-semibold">Fuad Rifqi Zamzami</div>
+      <div class="text-28px lg:text-40px font-semibold">Fuad Rifqi Zamzami</div>
       <hr class="border-primary-200" />
       <div class="text-16px lg:text-28px">Software Engineer</div>
     </div>

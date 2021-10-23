@@ -7,7 +7,17 @@
           :src="`/@/assets/images/${detailData.image}`"
           :alt="detailData.image"
         />
-        <p class="text-24px lg:text-36px font-semibold">
+        <p
+          class="
+            text-24px
+            lg:text-36px
+            font-semibold
+            text-red-600
+            md:text-green-600
+            lg:text-yellow-500
+            xl:text-blue-600
+          "
+        >
           {{ detailData.title }}
         </p>
         <p
@@ -42,6 +52,7 @@ export default class Blog extends Vue {
     return blogList
   }
   get detailData() {
+    console.log('WKWK ', this.id)
     return blogList.find(item => item.id === this.id)
   }
 }

@@ -4,7 +4,7 @@
       <div class="h-auto justify-center inline-flex">
         <div class="flex-col space-y-4">
           <div class="text-20px lg:text-36px">Experience</div>
-          <div class="text-28px lg:text-48px font-semibold">Project</div>
+          <div class="text-28px lg:text-40px font-semibold">Project</div>
           <hr class="border-primary-200 -mx-10" />
           <div class="text-16px lg:text-28px"></div>
         </div>
