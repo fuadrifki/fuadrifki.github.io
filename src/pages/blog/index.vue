@@ -12,7 +12,7 @@
         class="flex flex-col space-y-4 lg:space-y-0 lg:flex-row lg:space-x-4"
       >
         <img
-          class="h-24 lg:h-36 cursor-pointer object-cover"
+          class="h-40 lg:h-36 cursor-pointer object-cover"
           :src="`/images/${blog.image}`"
           :alt="blog.image"
           @click="() => toDetail(blog.id)"
@@ -70,7 +70,7 @@ export default class Blog extends Vue {
   }
 
   ellipsisString(value: string) {
-    return ellipsisString(value, this.isLargeScreen ? 170 : 80)
+    return ellipsisString(value, this.isLargeScreen ? 170 : 110)
   }
 
   toDetail(id: string) {

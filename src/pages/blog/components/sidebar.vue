@@ -11,24 +11,24 @@
       lg:border-l lg:border-primary-200
     "
   >
-    <p class="text-14px font-semibold">Artikel Lainnya</p>
+    <h1 class="text-20px font-semibold uppercase">Artikel Lainnya</h1>
     <div
       v-for="blog in blogListData"
       :key="blog.id"
       class="flex flex-col space-y-4"
     >
       <img
-        class="h-20 lg:h-28 cursor-pointer object-cover"
+        class="h-40 lg:h-28 cursor-pointer object-cover"
         :src="`/images/${blog.image}`"
         :alt="blog.image"
         @click="() => toDetail(blog.id)"
       />
-      <p
+      <h1
         class="text-12px text-left cursor-pointer"
         @click="() => toDetail(blog.id)"
       >
         {{ ellipsisString(blog.title) }}
-      </p>
+      </h1>
     </div>
   </div>
 </template>
