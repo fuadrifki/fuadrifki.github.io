@@ -19,7 +19,7 @@
     >
       <img
         class="h-20 lg:h-28 cursor-pointer object-cover"
-        :src="`/@/assets/images/${blog.image}`"
+        :src="`/images/${blog.image}`"
         :alt="blog.image"
         @click="() => toDetail(blog.id)"
       />

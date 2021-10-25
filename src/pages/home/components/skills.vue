@@ -6,9 +6,9 @@
       <div class="h-auto inline-flex">
         <div class="flex-col space-y-2">
           <div class="text-16px lg:text-20px italic">My passion</div>
-          <div class="text-28px lg:text-40px font-semibold uppercase">
+          <h1 class="text-28px lg:text-40px font-semibold uppercase">
             Skills & Experience
-          </div>
+          </h1>
           <hr class="border-primary-200 -mx-10" />
           <div class="text-16px lg:text-28px"></div>
         </div>
@@ -44,7 +44,7 @@
           <img
             v-if="skill.image"
             class="h-20 object-contain"
-            :src="`/@/assets/images/${skill.image}-logo.svg`"
+            :src="`/images/${skill.image}-logo.svg`"
             :alt="skill.image"
           />
         </div>

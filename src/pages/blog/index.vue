@@ -8,17 +8,17 @@
       >
         <img
           class="h-24 lg:h-32 cursor-pointer object-cover"
-          :src="`/@/assets/images/${blog.image}`"
+          :src="`/images/${blog.image}`"
           :alt="blog.image"
           @click="() => toDetail(blog.id)"
         />
         <div class="flex flex-col space-y-2">
-          <p
+          <h1
             class="cursor-pointer text-18px lg:text-20px font-semibold"
             @click="() => toDetail(blog.id)"
           >
             {{ blog.title }}
-          </p>
+          </h1>
           <p
             class="text-14px leading-loose"
             v-html="

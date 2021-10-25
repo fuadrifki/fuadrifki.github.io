@@ -14,9 +14,9 @@
       <div class="h-auto inline-flex">
         <div class="flex-col space-y-2">
           <div class="text-16px lg:text-24px italic">Hi there, I'm</div>
-          <div class="text-28px lg:text-40px font-semibold uppercase">
+          <h1 class="text-28px lg:text-40px font-semibold uppercase">
             Fuad Rifqi Zamzami
-          </div>
+          </h1>
           <hr class="border-primary-200 -mx-10" />
           <div class="text-14px lg:text-20px">
             I'm a software engineer based <br class="lg:hidden" />
@@ -37,7 +37,7 @@
       >
         <img
           class="w-44 lg:w-64 rounded-full border-8 border-transparent"
-          src="/@/assets/images/me.jpeg"
+          src="/images/me.jpeg"
         />
       </div>
     </div>

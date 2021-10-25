@@ -14,10 +14,10 @@
         border-b border-primary-200
       "
     >
-      <img class="w-10" src="/@/assets/images/logo.png" />
+      <img class="w-10" src="/images/logo.png" />
       <img
         class="w-5 cursor-pointer"
-        src="/@/assets/images/bars.svg"
+        src="/images/bars.svg"
         @click="onExpand"
       />
     </div>
@@ -43,7 +43,7 @@
       <img
         v-if="!isLargeScreen"
         class="w-8 cursor-pointer absolute top-3 right-3"
-        src="/@/assets/images/x.svg"
+        src="/images/x.svg"
         @click="onExpand"
       />
       <img
@@ -57,7 +57,7 @@
           lg:left-10
           top-6
         "
-        src="/@/assets/images/logo.png"
+        src="/images/logo.png"
         @click="() => toMenu('/')"
       />
       <div
