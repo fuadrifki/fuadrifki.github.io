@@ -14,11 +14,7 @@
         border-b border-primary-200
       "
     >
-      <img
-        class="w-10 cursor-pointer"
-        src="/@/assets/images/logo.png"
-        @click="() => toMenu('/')"
-      />
+      <img class="w-10" src="/@/assets/images/logo.png" />
       <img
         class="w-5 cursor-pointer"
         src="/@/assets/images/bars.svg"

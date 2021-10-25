@@ -8,14 +8,22 @@
         space-y-4
         text-left
         justify-center
-        lg:pl-40
         pt-16
       "
     >
-      <div class="text-20px lg:text-36px">Hi, I'm</div>
-      <div class="text-28px lg:text-40px font-semibold">Fuad Rifqi Zamzami</div>
-      <hr class="border-primary-200" />
-      <div class="text-16px lg:text-28px">Software Engineer</div>
+      <div class="h-auto inline-flex">
+        <div class="flex-col space-y-2">
+          <div class="text-16px lg:text-24px italic">Hi there, I'm</div>
+          <div class="text-28px lg:text-40px font-semibold uppercase">
+            Fuad Rifqi Zamzami
+          </div>
+          <hr class="border-primary-200 -mx-10" />
+          <div class="text-14px lg:text-20px">
+            I'm a software engineer based <br class="lg:hidden" />
+            in Jambi, Indonesia.
+          </div>
+        </div>
+      </div>
     </div>
     <div class="w-full lg:w-1/2 flex justify-center items-center">
       <div

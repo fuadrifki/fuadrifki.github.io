@@ -3,7 +3,7 @@
     :class="`
       lg:${height}
       ${spacing ? 'py-20' : ''}
-      px-8 lg:px-20
+      px-8 lg:px-52 lg:space-x-20
       ${
         isToRight
           ? `flex-col ${spacing ? 'space-y-20' : ''} bg-gradient-to-r`
@@ -11,7 +11,7 @@
       } 
       flex lg:flex-row
       from-cool-gray-900
-      to-true-gray-900
+      to-cool-gray-800
       text-white`"
   >
     <slot />
