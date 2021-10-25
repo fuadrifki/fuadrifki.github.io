@@ -1,20 +1,31 @@
 <template>
-  <PageSections is-to-right height="h-full min-h-screen" :spacing="false">
-    <div class="w-full lg:w-3/4 mt-10 lg:mt-32 lg:px-8 py-10 text-left">
+  <PageSections
+    is-to-right
+    height="h-full min-h-screen"
+    :spacing="false"
+    :spacing-horizontal="false"
+  >
+    <div class="w-full lg:w-3/4 mt-10 lg:mt-32 py-10 text-left mr-8">
       <div
         v-for="blog in blogListData"
         :key="blog.id"
         class="flex flex-col space-y-4 lg:space-y-0 lg:flex-row lg:space-x-4"
       >
         <img
-          class="h-24 lg:h-32 cursor-pointer object-cover"
+          class="h-24 lg:h-36 cursor-pointer object-cover"
           :src="`/images/${blog.image}`"
           :alt="blog.image"
           @click="() => toDetail(blog.id)"
         />
         <div class="flex flex-col space-y-2">
           <h1
-            class="cursor-pointer text-18px lg:text-20px font-semibold"
+            class="
+              cursor-pointer
+              text-18px
+              lg:text-20px
+              font-semibold
+              leading-tight
+            "
             @click="() => toDetail(blog.id)"
           >
             {{ blog.title }}
@@ -59,7 +70,7 @@ export default class Blog extends Vue {
   }
 
   ellipsisString(value: string) {
-    return ellipsisString(value, this.isLargeScreen ? 200 : 80)
+    return ellipsisString(value, this.isLargeScreen ? 170 : 80)
   }
 
   toDetail(id: string) {

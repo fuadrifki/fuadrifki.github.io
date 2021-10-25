@@ -6,7 +6,7 @@
       mt-10
       lg:mt-32
       space-y-6
-      lg:px-8
+      lg:pl-8
       py-10
       lg:border-l lg:border-primary-200
     "
@@ -24,10 +24,10 @@
         @click="() => toDetail(blog.id)"
       />
       <p
-        class="text-12px text-left font-semibold cursor-pointer"
+        class="text-12px text-left cursor-pointer"
         @click="() => toDetail(blog.id)"
       >
-        {{ blog.title }}
+        {{ ellipsisString(blog.title) }}
       </p>
     </div>
   </div>
@@ -36,6 +36,7 @@
 <script lang="ts">
 import { Vue } from 'vue-class-component'
 import { blogList } from './data'
+import { ellipsisString } from '/@/components/misc/utils'
 import router from '/@/router'
 
 export default class SidebarBlog extends Vue {
@@ -44,6 +45,9 @@ export default class SidebarBlog extends Vue {
   }
   toDetail(id: string) {
     router.push(`/blog/${id}`)
+  }
+  ellipsisString(value: string) {
+    return ellipsisString(value, 75)
   }
 }
 </script>

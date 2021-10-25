@@ -1,7 +1,12 @@
 <template>
-  <PageSections is-to-right height="h-full" :spacing="false">
-    <div class="w-full lg:w-3/4 mt-10 lg:mt-32 lg:px-8 py-10 text-left">
-      <div class="flex flex-col space-y-4">
+  <PageSections
+    is-to-right
+    height="h-full min-h-screen"
+    :spacing="false"
+    :spacing-horizontal="false"
+  >
+    <div class="w-full lg:w-3/4 mt-10 lg:mt-32 py-10 text-left mr-8">
+      <div v-if="id" class="flex flex-col space-y-4">
         <img
           class="h-64 lg:h-96 object-cover"
           :src="`/images/${detailData.image}`"
@@ -16,6 +21,12 @@
             `<span class='font-semibold'>${detailData.user}</span> - ${detailData.text}`
           "
         />
+      </div>
+      <div
+        v-else
+        class="flex justify-center items-center h-full text-primary-200"
+      >
+        Blog not found
       </div>
     </div>
     <SidebarBlog />
