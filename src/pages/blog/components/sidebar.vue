@@ -21,11 +21,11 @@
         class="h-40 lg:h-28 cursor-pointer object-cover"
         :src="`/images/${blog.image}`"
         :alt="blog.image"
-        @click="() => toDetail(blog.id)"
+        @click="() => toDetail(blog.title)"
       />
       <h1
         class="text-12px text-left cursor-pointer"
-        @click="() => toDetail(blog.id)"
+        @click="() => toDetail(blog.title)"
       >
         {{ ellipsisString(blog.title) }}
       </h1>
@@ -43,8 +43,8 @@ export default class SidebarBlog extends Vue {
   get blogListData() {
     return blogList
   }
-  toDetail(id: string) {
-    router.push(`/blog/${id}`)
+  toDetail(title: string) {
+    router.push(`/blog/${title}`)
   }
   ellipsisString(value: string) {
     return ellipsisString(value, 75)

@@ -6,7 +6,7 @@
     :spacing-horizontal="false"
   >
     <div class="w-full lg:w-3/4 mt-10 lg:mt-32 py-10 text-left mr-8">
-      <div v-if="id" class="flex flex-col space-y-4">
+      <div v-if="title" class="flex flex-col space-y-4">
         <img
           class="h-64 lg:h-96 object-cover"
           :src="`/images/${detailData.image}`"
@@ -46,14 +46,16 @@ import SidebarBlog from './sidebar.vue'
   }
 })
 export default class Blog extends Vue {
-  get id() {
-    return Number(this.$route.params?.id)
+  get title() {
+    const title = this.$route.params?.title
+    document.title = document.title + ' | ' + title
+    return title
   }
   get blogListData() {
     return blogList
   }
   get detailData() {
-    return blogList.find(item => item.id === this.id)
+    return blogList.find(item => item.title === this.title)
   }
 }
 </script>

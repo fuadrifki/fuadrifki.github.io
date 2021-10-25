@@ -44,7 +44,7 @@ const routes = [
     component: Layout,
     children: [
       {
-        path: ':id',
+        path: ':title',
         name: 'Blog Detail',
         component: BlogDetail
       }
@@ -86,8 +86,16 @@ const router = createRouter({
 //reference : https://github.com/vuejs/vue-router/issues/914
 router.beforeEach(async (to: any, from: any, next: any) => {
   document.title = 'FR'
+
   if (to.name != null) {
     document.title = 'FR - ' + to.name
+
+    // meta description
+    const link = document.createElement('meta')
+    link.name = 'descrition'
+    link.content =
+      'My main area of ​​interest is the front-end. My passion for code has begun when college in 2016 and learn the basics in web building.'
+    document.getElementsByTagName('head')[0].appendChild(link)
   }
   next()
 })

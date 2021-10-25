@@ -15,7 +15,7 @@
           class="h-40 lg:h-36 cursor-pointer object-cover"
           :src="`/images/${blog.image}`"
           :alt="blog.image"
-          @click="() => toDetail(blog.id)"
+          @click="() => toDetail(blog.title)"
         />
         <div class="flex flex-col space-y-2">
           <h1
@@ -26,7 +26,7 @@
               font-semibold
               leading-tight
             "
-            @click="() => toDetail(blog.id)"
+            @click="() => toDetail(blog.title)"
           >
             {{ blog.title }}
           </h1>
@@ -73,8 +73,8 @@ export default class Blog extends Vue {
     return ellipsisString(value, this.isLargeScreen ? 170 : 110)
   }
 
-  toDetail(id: string) {
-    router.push(`/blog/${id}`)
+  toDetail(title: string) {
+    router.push(`/blog/${title}`)
   }
 }
 </script>
