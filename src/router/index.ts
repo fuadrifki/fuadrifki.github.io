@@ -89,13 +89,6 @@ router.beforeEach(async (to: any, from: any, next: any) => {
 
   if (to.name != null) {
     document.title = 'FR - ' + to.name
-
-    // meta description
-    const link = document.createElement('meta')
-    link.name = 'descrition'
-    link.content =
-      'My main area of ​​interest is the front-end. My passion for code has begun when college in 2016 and learn the basics in web building.'
-    document.getElementsByTagName('head')[0].appendChild(link)
   }
   next()
 })

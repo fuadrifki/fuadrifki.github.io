@@ -20,7 +20,7 @@
       <img
         class="h-40 lg:h-28 cursor-pointer object-cover"
         :src="`/images/${blog.image}`"
-        :alt="blog.image"
+        :alt="blog.title"
         @click="() => toDetail(blog.title)"
       />
       <h1
@@ -44,7 +44,7 @@ export default class SidebarBlog extends Vue {
     return blogList
   }
   toDetail(title: string) {
-    router.push(`/blog/${title}`)
+    MainAppController.toDetailBlog(title)
   }
   ellipsisString(value: string) {
     return ellipsisString(value, 75)

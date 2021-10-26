@@ -51,7 +51,6 @@ import PageSections from '/@/components/layout/page-sections.vue'
 import { blogList } from './components/data'
 import SidebarBlog from './components/sidebar.vue'
 import { ellipsisString } from '/@/components/misc/utils'
-import router from '/@/router'
 import { MainAppController } from '/@/controllers/MainAppController'
 
 @Options({
@@ -74,7 +73,7 @@ export default class Blog extends Vue {
   }
 
   toDetail(title: string) {
-    router.push(`/blog/${title}`)
+    MainAppController.toDetailBlog(title)
   }
 }
 </script>
