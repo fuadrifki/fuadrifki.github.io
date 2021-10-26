@@ -12,7 +12,7 @@ const NotFound = () => import('/@/pages/not-found/index.vue')
 
 const history = createWebHashHistory()
 
-const routes = [
+export const routes = [
   {
     path: '/',
     name: 'Home',
