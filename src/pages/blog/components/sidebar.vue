@@ -37,7 +37,7 @@
 import { Vue } from 'vue-class-component'
 import { blogList } from './data'
 import { ellipsisString } from '/@/components/misc/utils'
-import router from '/@/router'
+import { MainAppController } from '/@/controllers/MainAppController'
 
 export default class SidebarBlog extends Vue {
   get blogListData() {

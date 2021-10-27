@@ -10,6 +10,8 @@ const BlogDetail = () => import('/@/pages/blog/components/detail.vue')
 const MyShop = () => import('/@/pages/my-shop/index.vue')
 const Overview = () => import('/@/pages/my-shop/overview/index.vue')
 const Products = () => import('/@/pages/my-shop/products/index.vue')
+const ProductDetail = () =>
+  import('/@/pages/my-shop/products/components/detail.vue')
 const NotFound = () => import('/@/pages/not-found/index.vue')
 
 const history = createWebHashHistory()
@@ -73,6 +75,11 @@ export const routes = [
             path: 'products',
             name: 'My Shop | Products',
             component: Products
+          },
+          {
+            path: 'products/:title',
+            name: 'My Shop | Products | Detail',
+            component: ProductDetail
           }
         ]
       }

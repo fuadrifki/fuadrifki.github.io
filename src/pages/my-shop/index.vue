@@ -2,7 +2,7 @@
   <PageSections is-default height="h-full min-h-screen" :is-reverse="false">
     <div class="mt-20 lg:mt-32 w-full bg-transparent overflow-hidden">
       <div class="px-8 lg:px-40">
-        <div class="flex gap-x-6 text-16px border-b border-primary-200 w-full">
+        <div class="flex gap-x-6 text-16px border-b border-gray-600 w-full">
           <h1
             v-for="tab in tabs"
             :key="tab.name"

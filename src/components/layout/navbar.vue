@@ -70,6 +70,9 @@
           w-full
           lg:border-l-4
           border-gray-700
+          rounded-b-md
+          lg:bg-cool-gray-900
+          bg-opacity-70
         "
       >
         <div class="text-16px font-semibold text-transparent">test</div>
@@ -85,6 +88,9 @@
           border-gray-700
           py-4
           lg:py-0
+          rounded-b-md
+          lg:bg-cool-gray-900
+          bg-opacity-70
         "
       >
         <template v-for="(menu, idx) in menuList" :key="idx">

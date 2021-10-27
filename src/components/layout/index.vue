@@ -4,12 +4,12 @@
       id="navbar"
       :class="`${
         !showHeader ? 'hidden' : ''
-      } w-full flex flex-row items-start lg:px-40 fixed top-0 inset-x-0`"
+      } w-full flex flex-row items-start lg:px-40 fixed top-0 inset-x-0 z-50`"
     >
       <Navbar />
     </div>
     <div
-      :class="`flex flex-col w-full ${
+      :class="`flex flex-col w-full z-20 ${
         isExpand ? 'overflow-hidden' : 'overflow-auto'
       }`"
     >

@@ -24,6 +24,11 @@ class MainAppStore extends VuexModule {
   public toDetailBlog(title: string) {
     router.push(`/blog/${title.toLowerCase().replaceAll(' ', '-')}`)
   }
+
+  @Action
+  public toDetailProduct(title: string) {
+    router.push(`/my-shop/products/${title.toLowerCase().replaceAll(' ', '-')}`)
+  }
 }
 
 export const MainAppController = getModule(MainAppStore)

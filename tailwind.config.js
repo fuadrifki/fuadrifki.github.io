@@ -32,7 +32,8 @@ module.exports = {
       lime: colors.lime,
       primary: {
         100: '#016938',
-        200: '#95cf24'
+        200: '#95cf24',
+        300: '#F94D2F'
       }
     },
     spacing: {
