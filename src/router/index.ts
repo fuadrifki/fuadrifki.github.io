@@ -8,6 +8,8 @@ const Home = () => import('/@/pages/home/index.vue')
 const Blog = () => import('/@/pages/blog/index.vue')
 const BlogDetail = () => import('/@/pages/blog/components/detail.vue')
 const MyShop = () => import('/@/pages/my-shop/index.vue')
+const Overview = () => import('/@/pages/my-shop/overview/index.vue')
+const Products = () => import('/@/pages/my-shop/products/index.vue')
 const NotFound = () => import('/@/pages/not-found/index.vue')
 
 const history = createWebHashHistory()
@@ -40,12 +42,12 @@ export const routes = [
   },
   {
     path: '/blog',
-    name: 'Blog Detail',
+    name: 'Blog | Detail',
     component: Layout,
     children: [
       {
         path: ':title',
-        name: 'Blog Detail',
+        name: 'Blog | Detail',
         component: BlogDetail
       }
     ]
@@ -58,8 +60,21 @@ export const routes = [
     children: [
       {
         path: '',
+        redirect: '/my-shop/overview',
         name: 'My Shop',
-        component: MyShop
+        component: MyShop,
+        children: [
+          {
+            path: 'overview',
+            name: 'My Shop | Overview',
+            component: Overview
+          },
+          {
+            path: 'products',
+            name: 'My Shop | Products',
+            component: Products
+          }
+        ]
       }
     ]
   },

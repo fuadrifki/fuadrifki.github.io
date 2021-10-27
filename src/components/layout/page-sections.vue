@@ -1,14 +1,14 @@
 <template>
   <div
     :class="`
-      lg:${height}
-      ${spacing ? 'py-20' : ''}
-      ${spacingHorizontal ? 'lg:space-x-20' : ''}
-      px-8 lg:px-40
+      ${height}
+      ${spacing && !isDefault ? 'py-20' : ''}
+      ${spacingHorizontal && !isDefault ? 'lg:space-x-20' : ''}
+      ${isDefault ? '' : `px-8 lg:px-${paddingHorizonal}`}
       ${
         isToRight
           ? `flex-col ${spacing ? 'space-y-20' : ''} bg-gradient-to-r`
-          : 'flex-col-reverse bg-gradient-to-l'
+          : `${isReverse ? 'flex-col-reverse' : ''} bg-gradient-to-l`
       } 
       flex lg:flex-row
       from-cool-gray-900
@@ -36,9 +36,21 @@ import { Options, Vue } from 'vue-class-component'
       default: true,
       type: Boolean
     },
+    isDefault: {
+      default: false,
+      type: Boolean
+    },
+    isReverse: {
+      default: true,
+      type: Boolean
+    },
     height: {
-      default: 'h-screen',
+      default: 'lg:h-screen',
       type: String
+    },
+    paddingHorizonal: {
+      default: 40,
+      type: Number
     }
   }
 })

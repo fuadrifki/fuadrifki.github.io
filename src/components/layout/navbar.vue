@@ -144,7 +144,7 @@ export default class Navbar extends Vue {
       },
       {
         name: 'My Shop',
-        action: () => alert('My Shop to be development...')
+        action: () => this.toMenu('/my-shop')
       },
       {
         name: 'About Me',
