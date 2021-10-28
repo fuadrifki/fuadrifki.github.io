@@ -16,9 +16,22 @@
         leading-loose
       "
     >
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut nobis a, sequi
-      quisquam numquam esse provident natus dignissimos doloribus iure officiis,
-      unde accusamus est, consectetur earum aliquid in vel soluta.
+      <p>
+        Spesial untuk kamu yang berbelanja produk perawatan kecantikan.
+        Investasikan kesehatan kulit dengan memberikan produk perawatan terbaik
+        dan produk yang aman digunakan untuk semua jenis kulit serta dapat
+        digunakan oleh wanita maupun pria.
+      </p>
+      <p>
+        Menyediakan semua jenis sebagai perawatan lengkap untuk masalah umum
+        kulit.
+      </p>
+      <p>
+        Kami menjual dari berbagai produk dengan brands yang berbeda. Kami
+        melayani pembelian secara retail atau satuan dan dalam jumlah banyak
+        atau grosir dengan harga terbaik, kami juga melayani reseller dengan
+        sistem dropshipping.
+      </p>
     </div>
   </PageSections>
 </template>

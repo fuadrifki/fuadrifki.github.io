@@ -12,6 +12,7 @@ const Overview = () => import('/@/pages/my-shop/overview/index.vue')
 const Products = () => import('/@/pages/my-shop/products/index.vue')
 const ProductDetail = () =>
   import('/@/pages/my-shop/products/components/detail.vue')
+const Contact = () => import('/@/pages/contact/index.vue')
 const NotFound = () => import('/@/pages/not-found/index.vue')
 
 const history = createWebHashHistory()
@@ -82,6 +83,19 @@ export const routes = [
             component: ProductDetail
           }
         ]
+      }
+    ]
+  },
+  // contact
+  {
+    path: '/contact',
+    name: 'Contact',
+    component: Layout,
+    children: [
+      {
+        path: '',
+        name: 'contact',
+        component: Contact
       }
     ]
   },
