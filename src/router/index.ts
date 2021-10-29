@@ -4,6 +4,7 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 const Layout = () => import('/@/components/layout/index.vue')
 
 // pages
+const Login = () => import('/@/pages/login/index.vue')
 const Home = () => import('/@/pages/home/index.vue')
 const Blog = () => import('/@/pages/blog/index.vue')
 const BlogDetail = () => import('/@/pages/blog/components/detail.vue')
@@ -18,6 +19,19 @@ const NotFound = () => import('/@/pages/not-found/index.vue')
 const history = createWebHashHistory()
 
 export const routes = [
+  {
+    path: '/login',
+    name: 'Login',
+    component: Layout,
+    children: [
+      {
+        path: '',
+        name: 'Login',
+        component: Login
+      }
+    ]
+  },
+  // Home
   {
     path: '/',
     name: 'Home',
