@@ -75,7 +75,12 @@
             </div>
           </div>
           <div class="w-full flex justify-end">
-            <Button title="Beli Sekarang" disabled @click="orderNow" />
+            <Button
+              title="Beli Sekarang"
+              size="large"
+              disabled
+              @click="orderNow"
+            />
           </div>
         </div>
       </div>
