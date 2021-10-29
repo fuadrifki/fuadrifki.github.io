@@ -7,8 +7,18 @@
   >
     <div class="flex flex-col py-4">
       <div class="flex flex-row justify-between">
-        <Input v-model="search" placeholder="Cari produk" icon-left="search" />
-        <Button title="Tambah" icon-left="plus" @click="onAddForm" />
+        <Input
+          v-model="search"
+          placeholder="Cari produk"
+          icon-left="search"
+          disabled
+        />
+        <Button
+          v-if="false"
+          title="Tambah"
+          icon-left="plus"
+          @click="onAddForm"
+        />
       </div>
       <div
         class="
