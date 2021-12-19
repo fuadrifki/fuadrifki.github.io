@@ -18,14 +18,24 @@ module.exports = {
 
       black: colors.black,
       white: colors.white,
-      gray: colors.coolGray,
+      gray: colors.gray,
+      'cool-gray': colors.coolGray,
+      'true-gray': colors.trueGray,
+      'warm-gray': colors.warmGray,
       red: colors.red,
       yellow: colors.amber,
       green: colors.emerald,
       blue: colors.blue,
       indigo: colors.indigo,
       purple: colors.violet,
-      pink: colors.pink
+      pink: colors.pink,
+      lime: colors.lime,
+      primary: {
+        100: '#016938',
+        200: '#95cf24',
+        300: '#F94D2F',
+        400: '#73a019'
+      }
     },
     spacing: {
       px: '1px',
@@ -294,7 +304,23 @@ module.exports = {
       '6xl': ['3.75rem', { lineHeight: '1' }],
       '7xl': ['4.5rem', { lineHeight: '1' }],
       '8xl': ['6rem', { lineHeight: '1' }],
-      '9xl': ['8rem', { lineHeight: '1' }]
+      '9xl': ['8rem', { lineHeight: '1' }],
+      '10px': '10px',
+      '12px': '12px',
+      '14px': '14px',
+      '16px': '16px',
+      '18px': '18px',
+      '20px': '20px',
+      '24px': '24px',
+      '28px': '28px',
+      '32px': '32px',
+      '36px': '36px',
+      '40px': '40px',
+      '44px': '44px',
+      '48px': '48px',
+      '52px': '52px',
+      '56px': '56px',
+      '64px': '64px'
     },
     fontWeight: {
       thin: '100',
