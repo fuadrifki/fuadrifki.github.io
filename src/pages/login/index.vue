@@ -1,5 +1,5 @@
 <template>
-  <PageSections is-to-right>
+  <PageSections is-to-right height="h-full min-h-screen">
     <div
       class="
         w-full
@@ -11,7 +11,7 @@
         lg:pl-40
       "
     >
-      <h1 class="text-28px lg:text-40px font-medium">Masuk ke Apps</h1>
+      <h1 class="text-32px lg:text-40px font-medium">Masuk ke Apps</h1>
       <div class="flex flex-col w-full lg:w-2/5 space-y-12">
         <div class="flex flex-col w-full space-y-6">
           <Input
@@ -26,7 +26,6 @@
             placeholder="Masukkan password"
           />
         </div>
-        <p>{{ form }}</p>
         <Button title="Masuk" :disabled="disabled" />
       </div>
     </div>

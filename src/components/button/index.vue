@@ -58,7 +58,7 @@ export default class Button extends Vue {
     if (this.props.size === 'large') {
       return 'py-3 px-8'
     } else if (this.props.size === 'normal') {
-      return 'py-1 px-6'
+      return 'py-2 px-6'
     }
     return ''
   }

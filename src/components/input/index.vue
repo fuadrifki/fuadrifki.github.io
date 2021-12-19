@@ -51,7 +51,7 @@ import InputText from 'primevue/inputtext'
   emits: ['update:modelValue'],
   props: {
     modelValue: {
-      required: true
+      type: String
     },
     title: {
       default: '',

@@ -6,19 +6,11 @@
     :is-reverse="false"
   >
     <div class="flex flex-col py-4">
-      <div class="flex flex-row justify-between">
-        <Input
-          v-model="search"
-          placeholder="Cari produk"
-          icon-left="search"
-          disabled
-        />
-        <Button
-          v-if="false"
-          title="Tambah"
-          icon-left="plus"
-          @click="onAddForm"
-        />
+      <div class="flex flex-row justify-between space-x-4">
+        <Input v-model="search" placeholder="Cari produk" icon-left="search" />
+        <!-- disabled
+          v-if="false" -->
+        <Button title="Tambah" icon-left="plus" @click="onAddForm" />
       </div>
       <div
         class="
@@ -95,7 +87,7 @@
     v-model:visible="addForm"
     header="Tambah Produk"
     modal
-    :breakpoints="{ '960px': '75vw', '640px': '100vw' }"
+    :breakpoints="{ '960px': '75vw', '': '' }"
     :style="{ width: '50vw' }"
     close-on-escape
     draggable
