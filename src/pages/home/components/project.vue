@@ -4,9 +4,9 @@
       <div class="h-auto justify-center inline-flex">
         <div class="flex-col space-y-2">
           <div class="text-16px lg:text-20px italic">Project Experience</div>
-          <div class="text-28px lg:text-40px font-semibold uppercase">
+          <h1 class="text-28px lg:text-40px font-semibold uppercase">
             My Recent Work
-          </div>
+          </h1>
           <hr class="border-primary-200 -mx-10" />
         </div>
       </div>
@@ -25,7 +25,7 @@
             <img
               v-if="project.image"
               class="h-20 object-contain"
-              :src="`/@/assets/images/${project.image}.png`"
+              :src="`/images/${project.image}.png`"
               :alt="project.image"
             />
             <p v-if="project.title" class="text-white text-20px">

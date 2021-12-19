@@ -5,3 +5,21 @@
   text-align: center;
   color: #2c3e50;
 }
+
+/* Scroll bar */
+::-webkit-scrollbar {
+  height: 0px;
+  width: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 25px;
+}
+::-webkit-scrollbar-thumb {
+  background: #95cf24;
+  border-radius: 25px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #016938;
+  border-radius: 25px;
+}

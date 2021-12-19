@@ -4,15 +4,34 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 const Layout = () => import('/@/components/layout/index.vue')
 
 // pages
+const Login = () => import('/@/pages/login/index.vue')
 const Home = () => import('/@/pages/home/index.vue')
 const Blog = () => import('/@/pages/blog/index.vue')
 const BlogDetail = () => import('/@/pages/blog/components/detail.vue')
 const MyShop = () => import('/@/pages/my-shop/index.vue')
+const Overview = () => import('/@/pages/my-shop/overview/index.vue')
+const Products = () => import('/@/pages/my-shop/products/index.vue')
+const ProductDetail = () =>
+  import('/@/pages/my-shop/products/components/detail.vue')
+const Contact = () => import('/@/pages/contact/index.vue')
 const NotFound = () => import('/@/pages/not-found/index.vue')
 
 const history = createWebHashHistory()
 
-const routes = [
+export const routes = [
+  {
+    path: '/login',
+    name: 'Login',
+    component: Layout,
+    children: [
+      {
+        path: '',
+        name: 'Login',
+        component: Login
+      }
+    ]
+  },
+  // Home
   {
     path: '/',
     name: 'Home',
@@ -40,12 +59,12 @@ const routes = [
   },
   {
     path: '/blog',
-    name: 'Blog Detail',
+    name: 'Blog | Detail',
     component: Layout,
     children: [
       {
-        path: ':id',
-        name: 'Blog Detail',
+        path: ':title',
+        name: 'Blog | Detail',
         component: BlogDetail
       }
     ]
@@ -58,8 +77,39 @@ const routes = [
     children: [
       {
         path: '',
+        redirect: '/my-shop/overview',
         name: 'My Shop',
-        component: MyShop
+        component: MyShop,
+        children: [
+          {
+            path: 'overview',
+            name: 'My Shop | Overview',
+            component: Overview
+          },
+          {
+            path: 'products',
+            name: 'My Shop | Products',
+            component: Products
+          },
+          {
+            path: 'products/:title',
+            name: 'My Shop | Products | Detail',
+            component: ProductDetail
+          }
+        ]
+      }
+    ]
+  },
+  // contact
+  {
+    path: '/contact',
+    name: 'Contact',
+    component: Layout,
+    children: [
+      {
+        path: '',
+        name: 'contact',
+        component: Contact
       }
     ]
   },
@@ -86,6 +136,7 @@ const router = createRouter({
 //reference : https://github.com/vuejs/vue-router/issues/914
 router.beforeEach(async (to: any, from: any, next: any) => {
   document.title = 'FR'
+
   if (to.name != null) {
     document.title = 'FR - ' + to.name
   }

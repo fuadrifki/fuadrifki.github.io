@@ -14,10 +14,10 @@
         border-b border-primary-200
       "
     >
-      <img class="w-10" src="/@/assets/images/logo.png" />
+      <img class="w-10" src="/images/logo.png" />
       <img
         class="w-5 cursor-pointer"
-        src="/@/assets/images/bars.svg"
+        src="/images/bars.svg"
         @click="onExpand"
       />
     </div>
@@ -43,7 +43,7 @@
       <img
         v-if="!isLargeScreen"
         class="w-8 cursor-pointer absolute top-3 right-3"
-        src="/@/assets/images/x.svg"
+        src="/images/x.svg"
         @click="onExpand"
       />
       <img
@@ -57,7 +57,7 @@
           lg:left-10
           top-6
         "
-        src="/@/assets/images/logo.png"
+        src="/images/logo.png"
         @click="() => toMenu('/')"
       />
       <div
@@ -70,6 +70,9 @@
           w-full
           lg:border-l-4
           border-gray-700
+          rounded-b-md
+          lg:bg-cool-gray-900
+          bg-opacity-70
         "
       >
         <div class="text-16px font-semibold text-transparent">test</div>
@@ -81,10 +84,12 @@
           flex flex-col
           lg:flex-row
           items-center
-          lg:pt-8 lg:border-r-4
-          border-gray-700
+          lg:pt-8
           py-4
           lg:py-0
+          rounded-b-md
+          lg:bg-cool-gray-900
+          bg-opacity-70
         "
       >
         <template v-for="(menu, idx) in menuList" :key="idx">
@@ -95,7 +100,6 @@
                 font-medium
                 whitespace-nowrap
                 px-4
-                ${idx === menuList.length - 1 ? 'lg:mr-10' : ''}
                 text-white
                 hover:text-primary-200
                 ${isActive(menu.name) ? 'text-primary-200' : 'cursor-pointer'}
@@ -113,6 +117,24 @@
             />
           </div>
         </template>
+      </div>
+      <div
+        v-if="!isExpand"
+        class="
+          flex flex-col
+          justify-between
+          space-y-4
+          pt-8
+          w-10
+          lg:border-r-4
+          border-gray-700
+          rounded-b-md
+          lg:bg-cool-gray-900
+          bg-opacity-70
+        "
+      >
+        <div class="text-16px font-semibold text-transparent">test</div>
+        <hr class="lg:border-b-4 border-t-0 border-gray-700" />
       </div>
     </div>
     <!-- end navbar -->
@@ -140,15 +162,16 @@ export default class Navbar extends Vue {
       },
       {
         name: 'Blog',
-        action: () => this.toMenu('/blog')
+        action: () =>
+          window.open('https://artikel-fuadrifki.blogspot.com/', '_blank')
       },
       {
         name: 'My Shop',
-        action: () => alert('My Shop to be development...')
+        action: () => this.toMenu('/my-shop')
       },
       {
-        name: 'About Me',
-        action: () => alert('About Me to be development...')
+        name: 'Contact',
+        action: () => this.toMenu('/contact')
       }
     ]
   }

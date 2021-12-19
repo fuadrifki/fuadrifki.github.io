@@ -1,4 +1,11 @@
-import { VuexModule, Module, Mutation, getModule } from 'vuex-module-decorators'
+import {
+  VuexModule,
+  Module,
+  Mutation,
+  getModule,
+  Action
+} from 'vuex-module-decorators'
+import router from '../router'
 import store from '/@/store'
 
 @Module({ namespaced: true, dynamic: true, store, name: 'main-app' })
@@ -11,6 +18,16 @@ class MainAppStore extends VuexModule {
     if (!this.isLargeScreen) {
       this.isExpand = !this.isExpand
     }
+  }
+
+  @Action
+  public toDetailBlog(title: string) {
+    router.push(`/blog/${title.toLowerCase().replaceAll(' ', '-')}`)
+  }
+
+  @Action
+  public toDetailProduct(title: string) {
+    router.push(`/my-shop/products/${title.toLowerCase().replaceAll(' ', '-')}`)
   }
 }
 
